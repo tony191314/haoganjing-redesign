@@ -355,6 +355,141 @@
     }
     #what-is .glass-card p:last-child { margin-bottom: 0; }
 
+    /* ===== PBM SCIENCE ===== */
+    #pbm-science {
+      background: radial-gradient(ellipse at 30% 50%, rgba(100, 210, 255, 0.04) 0%, transparent 60%);
+    }
+    .pbm-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .pbm-cell {
+      position: relative;
+      padding: 1.8rem 1.5rem;
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      background: rgba(10, 14, 26, 0.5);
+      border: 1px solid rgba(100, 210, 255, 0.08);
+      transition: all 0.4s ease;
+      overflow: hidden;
+    }
+    .pbm-cell::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(100,210,255,0.3), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .pbm-cell:hover::before { opacity: 1; }
+    .pbm-cell:hover {
+      border-color: rgba(100, 210, 255, 0.18);
+      background: rgba(10, 14, 26, 0.7);
+      transform: translateY(-2px);
+    }
+    .pbm-cell-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .pbm-cell h4 {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: rgba(240, 236, 228, 0.9);
+    }
+    .pbm-cell p {
+      font-size: 0.78rem;
+      color: rgba(240, 236, 228, 0.5);
+      line-height: 1.6;
+    }
+    .pbm-cell .highlight {
+      color: #64d2ff;
+      font-weight: 500;
+    }
+
+    /* ===== PBM WIDE PANELS ===== */
+    .pbm-wide {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .pbm-panel {
+      padding: 2rem;
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      background: rgba(10, 14, 26, 0.5);
+      border: 1px solid rgba(100, 210, 255, 0.08);
+      transition: all 0.4s ease;
+    }
+    .pbm-panel:hover {
+      border-color: rgba(100, 210, 255, 0.15);
+      background: rgba(10, 14, 26, 0.7);
+    }
+    .pbm-panel h4 {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: rgba(240, 236, 228, 0.85);
+    }
+    .pbm-panel p, .pbm-panel li {
+      font-size: 0.82rem;
+      color: rgba(240, 236, 228, 0.55);
+      line-height: 1.7;
+      margin-bottom: 0.4rem;
+    }
+    .pbm-panel ul { list-style: none; padding: 0; }
+    .pbm-panel li::before { content: '▸ '; color: #64d2ff; }
+    .pbm-tag {
+      display: inline-block;
+      padding: 0.2rem 0.7rem;
+      border-radius: 10px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+    .pbm-tag.nm { background: rgba(255,100,100,0.15); color: #ff8888; }
+    .pbm-tag.joules { background: rgba(100,255,100,0.15); color: #88ff88; }
+    .pbm-tag.safety { background: rgba(100,180,255,0.15); color: #88bbff; }
+
+    /* ===== PBM TABLE ===== */
+    .dose-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.78rem;
+    }
+    .dose-table th {
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      border-bottom: 1px solid rgba(100,210,255,0.15);
+      color: rgba(240,236,228,0.7);
+      font-weight: 600;
+    }
+    .dose-table td {
+      padding: 0.6rem 0.8rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: rgba(240,236,228,0.5);
+    }
+    .dose-table tr.good td { color: #88cc88; }
+    .dose-table tr.caution td { color: #ffcc88; }
+    .dose-table tr.danger td { color: #ff8888; }
+
+    /* ===== PBM RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .pbm-grid { grid-template-columns: 1fr 1fr; }
+      .pbm-wide { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .pbm-grid { grid-template-columns: 1fr; }
+    }
+
     /* ===== THREE EFFECTS ===== */
     .effects-grid {
       display: grid;
@@ -612,6 +747,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="#what-is">關於</a></li>
+      <li><a href="#pbm-science">科學原理</a></li>
       <li><a href="#effects">功效</a></li>
       <li><a href="#alpha-wave">適用族群</a></li>
       <li><a href="#guarantees">認證</a></li>
@@ -682,6 +818,141 @@
           the blood through light absorption, and its electromagnetic effect affects the physiological metabolism of
           the human body, and is mainly used to improve a variety of chronic diseases.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PBM SCIENCE ===== -->
+  <section id="pbm-science">
+    <div class="container">
+      <div style="text-align: center;">
+        <div class="section-label">The Science</div>
+        <h2 class="section-title">
+          光生物調節的科學原理
+          <span class="en">The Power of Photobiomodulation (PBM) — Healing at the Speed of Light</span>
+        </h2>
+        <p class="section-desc" style="margin: 0 auto 2rem;">
+          好甘淨穿戴式雷射治療儀的核心技術 — 低能量光療如何從細胞層面啟動身體自我修復
+        </p>
+      </div>
+
+      <!-- 4-Column Grid: The Optical Window -->
+      <h3 style="text-align: center; font-family: 'Noto Sans TC'; font-size: 1.1rem; font-weight: 600; color: rgba(240,236,228,0.7); margin-bottom: 1.5rem;">
+        🔬 「光學窗口」：選擇正確波長 <span style="font-family:'Cormorant Garamond'; font-weight:300; color: rgba(240,236,228,0.35); margin-left: 0.5rem;">The Optical Window</span>
+      </h3>
+      <div class="pbm-grid">
+        <div class="pbm-cell reveal">
+          <div class="pbm-cell-icon">🔴</div>
+          <h4>660nm 表面與皮膚修復</h4>
+          <p>促進膠原蛋白合成，加速慢性傷口與手術切口的癒合。<br />
+          <span class="highlight">Surface &amp; Skin Repair</span> — promotes collagen synthesis, accelerates healing of chronic wounds &amp; incisions.</p>
+          <span class="pbm-tag nm">660nm</span>
+          <span class="pbm-tag joules">淺層</span>
+        </div>
+        <div class="pbm-cell reveal reveal-delay-1">
+          <div class="pbm-cell-icon">🔵</div>
+          <h4>808–1050nm 深層穿透</h4>
+          <p>神經保護和深層疼痛緩解 — 穿透肌肉、關節、顱骨。<br />
+          <span class="highlight">Deep Tissue Penetration</span> — neuroprotection &amp; relief for deep-seated pain in muscles, joints, and skull.</p>
+          <span class="pbm-tag nm">808–1050nm</span>
+          <span class="pbm-tag joules">深層</span>
+        </div>
+        <div class="pbm-cell reveal reveal-delay-2">
+          <div class="pbm-cell-icon">🎯</div>
+          <h4>靶向粒線體</h4>
+          <p>光子被 <span class="highlight">細胞色素C氧化酶 (CCO)</span> 吸收，刺激粒線體功能。<br />Photons absorbed by Cytochrome C Oxidase — the primary photoacceptor.</p>
+          <span class="pbm-tag safety">CCO</span>
+        </div>
+        <div class="pbm-cell reveal reveal-delay-3">
+          <div class="pbm-cell-icon">⚡</div>
+          <h4>ATP 能量生產</h4>
+          <p>刺激 CCO 增加 <span class="highlight">ATP 合成</span>，為細胞修復與功能提供能量。<br />Stimulating CCO increases ATP Production — energy for cellular repair &amp; function.</p>
+          <span class="pbm-tag safety">ATP ↑</span>
+        </div>
+      </div>
+
+      <!-- Two wide panels: Mechanism + Signaling -->
+      <div class="pbm-wide">
+        <div class="pbm-panel reveal">
+          <h4>🧬 細胞機制 · Cellular Mechanism</h4>
+          <ul>
+            <li><strong>光吸收：</strong>粒線體中的細胞色素C氧化酶 (CCO) 吸收特定波長光子</li>
+            <li><strong>ATP 增加：</strong>電子傳遞鏈加速 → ATP 產量上升</li>
+            <li><strong>一氧化氮釋放：</strong>從CCO中釋放 NO（血管擴張劑），改善局部微循環</li>
+            <li><strong>ROS 調節：</strong>調控活性氧物種 (Reactive Oxygen Species) 水平，減少發炎反應</li>
+            <li><strong>訊號傳導：</strong>活化下游細胞訊號通路，促進組織修復與再生</li>
+          </ul>
+        </div>
+        <div class="pbm-panel reveal reveal-delay-2">
+          <h4>🩺 臨床應用 · Clinical Applications</h4>
+          <ul>
+            <li><strong>疼痛與發炎管理：</strong>治療關節炎、運動傷害、慢性背痛 — 減少水腫並抑制 TNF-α 等發炎細胞激素</li>
+            <li><strong>帕金森氏症神經保護：</strong>通過保護多巴胺神經元改善運動功能和認知能力</li>
+            <li><strong>動物健康恢復：</strong>伴侶雷射治療軟組織損傷、骨折、術後恢復 — 無需手術介入</li>
+            <li><strong>慢性疾病輔助：</strong>改善糖尿病潰瘍、周邊神經病變、放射治療後組織損傷</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dosing Table -->
+      <div class="pbm-wide" style="margin-top: 2rem;">
+        <div class="pbm-panel reveal">
+          <h4>📊 安全與精準劑量 · Biphasic Dose Response</h4>
+          <p style="margin-bottom: 1rem; color: rgba(240,236,228,0.7);">
+            「更多」不等於「更好」— 光生物調節遵循雙相劑量反應曲線
+          </p>
+          <table class="dose-table">
+            <thead>
+              <tr><th>應用類型</th><th>建議能量密度</th><th>結果</th></tr>
+            </thead>
+            <tbody>
+              <tr class="good">
+                <td>標準刺激</td>
+                <td><strong>2–6 J/cm²</strong></td>
+                <td>✅ 最佳組織修復與抗發炎</td>
+              </tr>
+              <tr class="good">
+                <td>擴展範圍</td>
+                <td><strong>1–20 J/cm²</strong></td>
+                <td>✅ 多數體外/體內模型安全</td>
+              </tr>
+              <tr class="danger">
+                <td>高劑量</td>
+                <td><strong>&gt; 20 J/cm²</strong></td>
+                <td>⚠️ 抑制或毒性反應風險</td>
+              </tr>
+              <tr class="caution">
+                <td>腦損傷 (810nm)</td>
+                <td><strong>36 J/cm²</strong></td>
+                <td>🔬 顯著功能改善（臨床研究）</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 0.8rem; font-size: 0.7rem; color: rgba(240,236,228,0.35);">
+            The Biphasic Dose Response — Optimal Stimulation peaks at 2–6 J/cm²; inhibitory effects appear above 20 J/cm².
+          </p>
+        </div>
+        <div class="pbm-panel reveal reveal-delay-2">
+          <h4>🛡️ 雷射安全 · Laser Safety Standards</h4>
+          <ul>
+            <li><strong>Class IV vs Class IIIb：</strong>Class IV (&gt;0.5W) 可以更短時間傳遞深層劑量（例如：3分鐘 vs 100分鐘）</li>
+            <li><strong>GMP 認證：</strong>醫療器材優良製造證明書確保生產質量</li>
+            <li><strong>IEC 60601-1：</strong>醫療電器設備安全規範 — 電氣與機械安全</li>
+            <li><strong>IEC 60601-1-2：</strong>醫療類電磁相容性要求</li>
+            <li><strong>IEC 60825-1：</strong>雷射產品安全規範 — 確保光輸出在治療窗口內</li>
+          </ul>
+          <div style="margin-top: 1.5rem; padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,100,100,0.15); background: rgba(255,100,100,0.04);">
+            <h4 style="color: #ff8888; font-size: 0.9rem; margin-bottom: 0.5rem;">🔴 產品焦點：好甘淨穿戴式雷射</h4>
+            <p style="font-size: 0.78rem; color: rgba(240,236,228,0.55); line-height: 1.6;">
+              採用「冷雷射」技術改善血液循環、增強免疫系統。<br />
+              <strong>三大核心：</strong>促進血液循環 · 緩解疼痛（白血球活化） · 改善睡眠（清除自由基）<br />
+              <strong>每日3小時</strong> — 血管大掃除，慢性病管理，延緩老化。
+            </p>
+            <span class="pbm-tag safety">GMP</span>
+            <span class="pbm-tag safety">IEC 60601</span>
+            <span class="pbm-tag safety">Class IV</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
